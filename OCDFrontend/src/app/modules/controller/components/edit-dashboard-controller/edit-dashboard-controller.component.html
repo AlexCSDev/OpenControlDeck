@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Edit dashboard</h1>
+<div mat-dialog-content>
+    <h4>Name</h4>
+    <mat-form-field style="width:100%;">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="data.name">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>

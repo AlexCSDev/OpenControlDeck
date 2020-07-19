@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>{{data.item.new ? "Creating new" : "Editing"}}</h1>
+<div mat-dialog-content>
+    <h4>Type</h4>
+    <mat-form-field style="width:100%;">
+        <mat-label>Type</mat-label>
+        <mat-select [(ngModel)]="data.item.dashboardItem.itemType" name="type">
+            <mat-option [value]="1">Text</mat-option>
+            <mat-option [value]="2">Button</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h4>Text</h4>
+    <mat-form-field style="width:100%;">
+        <mat-label>Text</mat-label>
+        <input matInput [(ngModel)]="data.item.dashboardItem.text">
+    </mat-form-field>
+    <h4>Image</h4>
+    <mat-form-field style="width:100%;">
+        <mat-label>Image</mat-label>
+        <input matInput [(ngModel)]="data.item.dashboardItem.image">
+    </mat-form-field>
+    <h4>Command</h4>
+    <mat-form-field style="width:100%;">
+        <mat-label>Command</mat-label>
+        <mat-select [(ngModel)]="data.item.dashboardItem.commandName" name="type">
+            <mat-option *ngFor="let command of commandsList" [value]="command.commandName">{{command.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h4>Command value</h4>
+    <mat-form-field style="width:100%;">
+        <mat-label>Command value</mat-label>
+        <input matInput [(ngModel)]="data.item.dashboardItem.commandValue">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button [mat-dialog-close]="data.item" cdkFocusInitial>Ok</button>
+</div>

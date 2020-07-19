@@ -1,0 +1,8 @@
+<div *ngIf="screensaverOn" class="overlay" (click)="handleClick()">
+    <div class="clock screensaverClock" [style.left.%]="screensaverClockPos.x" [style.top.%]="screensaverClockPos.y">
+        <div>{{ clock | date: 'HH:mm:ss' }}</div>
+        <div style="font-size:32pt;">{{ clock | date: 'dd.MM.yyyy' }}</div>
+        <!--<div style="margin:auto; width:128px;"><battery-indicator showText="true"></battery-indicator></div>-->
+    </div>
+    <particles [style]="screensaverStyle" [params]="screensaverParams"></particles>
+</div>
