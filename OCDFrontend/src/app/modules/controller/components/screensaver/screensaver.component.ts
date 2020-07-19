@@ -73,7 +73,6 @@ export class ScreensaverComponent implements OnInit, OnDestroy {
   }
 
   handleClick() {
-    console.log("handle click");
     if(!this.enabled) {
       if(!this.timerCleared) {
         clearInterval(this.timer);
