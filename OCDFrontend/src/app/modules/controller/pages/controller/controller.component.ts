@@ -33,9 +33,6 @@ export class ControllerComponent implements OnInit, OnDestroy {
   editMode: boolean;
 
   itemChange(item, itemComponent) {
-    console.log('item change');
-    console.log(item);
-    console.log(this.editMode);
     if(this.editMode) {
       item.changed = true;
     }
