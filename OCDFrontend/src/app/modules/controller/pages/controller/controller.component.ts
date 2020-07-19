@@ -114,7 +114,6 @@ export class ControllerComponent implements OnInit, OnDestroy {
   }
 
   selectedDashboardChanged(object: MatSelectChange) {
-    console.log("change");
     this.loadDashboard(object.value);
   }
 
