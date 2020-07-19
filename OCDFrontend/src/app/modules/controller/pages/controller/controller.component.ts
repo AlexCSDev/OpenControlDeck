@@ -33,6 +33,9 @@ export class ControllerComponent implements OnInit, OnDestroy {
   editMode: boolean;
 
   itemChange(item, itemComponent) {
+    console.log('item change');
+    console.log(item);
+    console.log(this.editMode);
     if(this.editMode) {
       item.changed = true;
     }
@@ -55,8 +58,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
     this.dashboard = {id: -1, name: "Loading", items: []};
   
     this.options = {
-      itemChangeCallback: this.itemChange,
-      itemResizeCallback: this.itemResize,
+      itemChangeCallback: this.itemChange.bind(this),
+      itemResizeCallback: this.itemResize.bind(this),
       gridType: GridType.Fixed,
       fixedColWidth: 128,
       fixedRowHeight: 128,
