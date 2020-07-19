@@ -55,8 +55,8 @@ export class ControllerComponent implements OnInit, OnDestroy {
     this.dashboard = {id: -1, name: "Loading", items: []};
   
     this.options = {
-      itemChangeCallback: this.itemChange,
-      itemResizeCallback: this.itemResize,
+      itemChangeCallback: this.itemChange.bind(this),
+      itemResizeCallback: this.itemResize.bind(this),
       gridType: GridType.Fixed,
       fixedColWidth: 128,
       fixedRowHeight: 128,
