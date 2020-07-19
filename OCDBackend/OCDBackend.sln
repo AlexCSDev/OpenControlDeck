@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OCDBackend", "OCDBackend\OCDBackend.csproj", "{2C679B85-63BC-41F5-B068-1274600C0757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDPluginInterface", "OCDPluginInterface\OCDPluginInterface.csproj", "{FA5CCCEC-E503-461A-A3B3-749B5AF1C746}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDPlugin.Hydrus", "Plugins\OCDPlugin.Hydrus\OCDPlugin.Hydrus.csproj", "{85DA5D60-20DE-4BE1-B3D5-62E4F2A896A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{C272A25E-2C0E-451A-A72E-26B9C9F7E048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDPlugin.KeyPress", "Plugins\OCDPlugin.KeyPress\OCDPlugin.KeyPress.csproj", "{14CC96E1-067E-40A2-8CD5-EFBA3EE63A0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCDPlugin.OBS", "Plugins\OCDPlugin.OBS\OCDPlugin.OBS.csproj", "{889DC030-3956-4634-A471-7EC7C1D30066}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C679B85-63BC-41F5-B068-1274600C0757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C679B85-63BC-41F5-B068-1274600C0757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C679B85-63BC-41F5-B068-1274600C0757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C679B85-63BC-41F5-B068-1274600C0757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA5CCCEC-E503-461A-A3B3-749B5AF1C746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA5CCCEC-E503-461A-A3B3-749B5AF1C746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA5CCCEC-E503-461A-A3B3-749B5AF1C746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA5CCCEC-E503-461A-A3B3-749B5AF1C746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85DA5D60-20DE-4BE1-B3D5-62E4F2A896A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85DA5D60-20DE-4BE1-B3D5-62E4F2A896A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85DA5D60-20DE-4BE1-B3D5-62E4F2A896A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85DA5D60-20DE-4BE1-B3D5-62E4F2A896A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14CC96E1-067E-40A2-8CD5-EFBA3EE63A0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CC96E1-067E-40A2-8CD5-EFBA3EE63A0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CC96E1-067E-40A2-8CD5-EFBA3EE63A0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CC96E1-067E-40A2-8CD5-EFBA3EE63A0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889DC030-3956-4634-A471-7EC7C1D30066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889DC030-3956-4634-A471-7EC7C1D30066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889DC030-3956-4634-A471-7EC7C1D30066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889DC030-3956-4634-A471-7EC7C1D30066}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85DA5D60-20DE-4BE1-B3D5-62E4F2A896A2} = {C272A25E-2C0E-451A-A72E-26B9C9F7E048}
+		{14CC96E1-067E-40A2-8CD5-EFBA3EE63A0F} = {C272A25E-2C0E-451A-A72E-26B9C9F7E048}
+		{889DC030-3956-4634-A471-7EC7C1D30066} = {C272A25E-2C0E-451A-A72E-26B9C9F7E048}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {584529AF-42AD-4AA8-820E-1A2963A8F31D}
+	EndGlobalSection
+EndGlobal

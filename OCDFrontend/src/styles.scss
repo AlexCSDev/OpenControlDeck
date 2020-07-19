@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// Include the default theme styles.
+@include angular-material-theme($dark-theme);
+
+html, body { background-color: black;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.snackbarError {
+    background: darkred;
+    color:white;
+}
+.snackbarGreen {
+    background: darkgreen;
+    color:white;
+}
+
+/*gridster .gridster-column {
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    outline: 10px solid red;
+}
+gridster .gridster-row {
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+    outline: 10px solid red;
+}*/
+gridster {
+    background: black !important;
+    overflow: visible !important;
+    height:90vh !important;
+}

@@ -1,0 +1,7 @@
+<div class="battery">
+    <div *ngIf="noBattery" class="no-battery">❌</div>
+    <div *ngIf="!noBattery" class="battery-level" [class.warn]="percentage <= 15 && percentage > 5 && !isCharging" [class.alert]="percentage <= 5 && !isCharging" [style.height.%]="percentage"></div>
+    <div *ngIf="isCharging" class="charging"></div>
+    <div *ngIf="showText && !noBattery" class="battery-percentage">{{percentage}}%</div>
+</div>
+<!--<div style="position: absolute; top:0px; left:0px; z-index: 9999; background-color: white; color:blue;">{{percentage}} {{isCharging}} {{noBattery}}</div>-->

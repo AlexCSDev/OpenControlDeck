@@ -1,0 +1,72 @@
+<screensaver [enabled]="screensaverEnabled"></screensaver>
+<div *ngIf="dashboard.id == -1" class="loadingOverlay">
+    <mat-progress-spinner
+    class="loadingSpinner"
+    color="accent"
+    mode="indeterminate">
+    </mat-progress-spinner>
+</div>
+<div class="container" (click)="screensaver.handleClick()">
+    <div class="header">
+        <h3 class="title">Dashboard:&nbsp;&nbsp;&nbsp;</h3>
+        <mat-form-field style="width:20%;">
+            <mat-select [(value)]="dashboard.id" (selectionChange)="selectedDashboardChanged($event)">
+              <mat-option *ngFor="let dashboard of dashboardsList" [value]="dashboard.id">
+                [{{dashboard.id}}] {{dashboard.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        <div class="clock">
+            <div>{{ clock | date: 'HH:mm' }}</div>
+            <div style="font-size:12pt;">{{ clock | date: 'dd.MM.yyyy' }}</div>
+        </div>
+        <div class="controls">
+            <div style="display:inline;">
+                <mat-slide-toggle
+                color="normal"
+                [checked]="screensaverEnabled"
+                (change)="onScreensaverToggle($event)" style="margin-right:10px;">SCRN</mat-slide-toggle>
+                <button mat-mini-fab color="primary" class="controlsBtn" (click)="reloadDashboard()" [disabled]="editMode">RELD</button>
+                <button mat-mini-fab color="primary" class="controlsBtn" (click)="newDashboard()" [disabled]="editMode">NEW</button>
+                <button mat-mini-fab color="primary" class="controlsBtn" (click)="editDashboard()" [disabled]="editMode">NAME</button>
+                <button mat-mini-fab color="primary" class="controlsBtn" style="background-color: darkred;" (click)="deleteDashboard()" [disabled]="editMode">DEL</button>
+            </div>
+            <mat-slide-toggle
+            color="warn"
+            [checked]="editMode"
+            (change)="onSlideToggle($event)">Edit</mat-slide-toggle>
+        </div>
+        <!--<div class="battery-indicator">
+            <battery-indicator [showText]="false"></battery-indicator>
+        </div>-->
+    </div>
+    <div class="grid">
+        <gridster [options]="options">
+            <gridster-item [item]="item" *ngFor="let item of items" class="gridItem">
+                <div *ngIf="item.deleted" class="deletedMark">❌</div>
+                <div *ngIf="item.moved" class="deletedMark">↩</div>
+                <!--<div *ngIf="!item.empty">-->
+                    <button *ngIf="editMode && !item.deleted && !item.moved" mat-flat-button class="gridItemDeleteButton" (click)="deleteItem(item)">Delete</button>
+                    <button *ngIf="editMode && !item.deleted && !item.moved" mat-flat-button class="gridItemEditButton" (click)="openEditDialog(item)">Edit</button>
+                    <button *ngIf="editMode && !item.deleted && !item.moved" mat-flat-button class="gridItemMoveButton" (click)="moveItem(item)">Move</button>
+                    <button *ngIf="editMode && !item.deleted && !item.moved" mat-flat-button class="gridItemCopyButton" (click)="copyItem(item)">Copy</button>
+                    <div *ngIf="item.dashboardItem.itemType != dashboardItemType.Text">
+                        <button mat-button class="gridItemButton" (click)="buttonClicked(item)">
+                            <img *ngIf="item.dashboardItem.image !== ''" class="gridItemButtonImg" src="assets/{{item.dashboardItem.image}}"/>
+                            <div *ngIf="item.dashboardItem.image === ''" class="gridItemTextEmptyImgContainer">
+                                <h1 class="gridItemTextEmptyImg">{{item.dashboardItem.text}}</h1>
+                            </div>
+                        </button>
+                        <div *ngIf="item.dashboardItem.image !== ''" class="gridItemText">{{item.dashboardItem.text}}</div>
+                    </div>
+                    <div *ngIf="item.dashboardItem.itemType == dashboardItemType.Text">
+                        <h2 style="text-align:center; position:absolute; left:5px; right:5px; bottom:0px; margin:0;">{{item.dashboardItem.text}}</h2>
+                    </div>
+                <!--</div>-->
+            </gridster-item>
+        </gridster>
+    </div>
+    <div *ngIf="editMode" class="editControls">
+        <button mat-fab class="addButton" color="primary" (click)="openEditDialog(null)">+</button>
+    </div>
+</div>
